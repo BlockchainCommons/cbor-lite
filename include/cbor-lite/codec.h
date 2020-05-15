@@ -154,10 +154,10 @@ typename std::enable_if<std::is_class<Buffer>::value && std::is_unsigned<Type>::
 
     switch (len) {
     case 8:
-        buffer.push_back((t >> 56) & 0xffU);
-        buffer.push_back((t >> 48) & 0xffU);
-        buffer.push_back((t >> 40) & 0xffU);
-        buffer.push_back((t >> 32) & 0xffU);
+        buffer.push_back((static_cast<unsigned long long>(t) >> 56) & 0xffU);
+        buffer.push_back((static_cast<unsigned long long>(t) >> 48) & 0xffU);
+        buffer.push_back((static_cast<unsigned long long>(t) >> 40) & 0xffU);
+        buffer.push_back((static_cast<unsigned long long>(t) >> 32) & 0xffU);
     case 4:
         buffer.push_back((t >> 24) & 0xffU);
         buffer.push_back((t >> 16) & 0xffU);
